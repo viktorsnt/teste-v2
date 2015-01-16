@@ -1,5 +1,309 @@
-body {
-  h1 {
-    font-size: 20px;
+@import "normalize";
+@import url(http://fonts.googleapis.com/css?family=Alef:400,700);
+
+$base-color: #00c690;
+$bg-color-dark: #072531;
+$bg-color-light: #1a4353;
+$bg-color: #0d2b37;
+
+// mixin
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
   }
+  &:after {
+    clear: both;
+  }
+}
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+// BASE
+
+body, html {
+	background: $bg-color;
+	height: 100%;
+}
+body {
+	border-top: 10px solid $base-color;
+	font-size: 16px;
+	font-family: 'Alef';
+}
+
+
+header {
+	nav {
+		float:left;
+		width: 100%;
+		display: block;
+		ul {
+			margin: 0 auto;
+			padding: 0;
+			li {
+				float: left;
+				list-style: none;
+				margin-right: 12px;
+				a {
+					display: inline-block;
+					background: $bg-color-dark;
+					color: $base-color;
+					text-decoration: none;
+					width: 130px;
+					padding: 10px 20px;
+					font-size: 24px;
+					&:hover {
+						background: $base-color;
+						color: $bg-color-dark;
+					}
+				}
+				&.logo {
+					a { 
+						width: 253px;
+					}
+				}
+			}
+		}
+	}
+	.tagline {
+		display: block;
+		h1{
+			small {
+				font-size: 24px;
+				font-style: italic;
+				position: absolute;
+				margin-top: 30px;
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+
+
+// FONT
+h1, h2, h3 {
+	color: $base-color;
+}
+
+h1 {
+  font-size: 44px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+a {
+	color: $bg-color-light;
+	text-decoration: none;
+	&:hover {
+		color: $base-color;
+		text-decoration: none;
+	}
+	&.button {
+		background: $bg-color-dark;
+		color: $base-color;
+		padding: 10px;
+		&:hover {
+			color: white;
+			background: $base-color;
+		}
+	}
+}
+
+p {
+	color: white;
+	a {
+		color: $base-color;	
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+
+
+// BLOCKS
+
+footer, section {
+	width: 100%;
+	padding: 40px 0;
+	float: left;
+
+	@include clearfix;
+}
+
+.wrapper {
+	width: 1020px;
+	padding-right: 10px;
+	padding-left: 10px;
+
+  @include center-block;
+  @include clearfix;
+}
+
+
+
+.list {
+	list-style: none;
+	padding:0;
+	li {
+		color: white;
+
+	}
+}
+
+
+
+.slider {
+	@include clearfix;
+	position: relative;
+	min-height: 320px;
+	.slide-content{
+		position: absolute;
+		opacity: 0;
+		&.active {
+			opacity: 1;
+		}
+		img {
+			width: 100%;
+		}
+		.slide-text{
+			position: absolute;
+			background: rgba($bg-color-dark, .7);
+			width: 100%;
+			padding: 10px 0 0 5px;
+			bottom: 0;
+			span {
+				color: $base-color;
+			}
+		}
+	}
+}
+
+
+
+.col {
+	width: 50%;
+	position: relative;
+	float: left;
+}
+.col-md {
+	width: 33%;
+}
+
+.icon {
+	margin-right: 40px;
+}
+
+form {
+	fieldset {
+		margin: 0;
+		font-size: 14px;
+		border: 0;
+		&.form-actions {
+			margin: 0;
+		}
+		input.form-text, textarea {
+			color: $bg-color-light;
+			display: block;
+			width: 50%;
+			padding: 5px;
+			font-size: 14px;
+			background: $bg-color-dark;
+			//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+			border-radius: 0;
+			border: 0;
+		}
+		textarea {
+			width: 100%;
+		}
+	}
+	input[type="submit"] {
+		margin: 0;
+		padding: 5px 10px;
+		font-size: 16px;
+		font-weight: bold;
+		background: $bg-color-dark;
+		color: $base-color;
+		//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+		border-radius: 0;
+		border: 0;
+		&:hover,
+		&:focus,
+		&:active {
+			color: white;
+			background: $base-color;
+		}
+	}
+}
+
+
+
+
+
+// FOOTER
+footer {
+	background: $bg-color-dark;
+	padding-bottom: 2px;
+	p {
+		color: $bg-color-light !important;
+	}
+	h3 {
+		margin-top: 0;
+		padding-top: 0;
+	}
+}
+.pull-right {
+	float: right;
+}
+.copyright {
+	display: block;
+	width: 100%;
+	float: left;
+	p{
+		font-size: 14px;
+		color: white !important;
+		font-style: italic;
+	}
+}
+
+nav.social {
+	margin: 0;
+	padding: 0;
+	li {
+		float: left;
+		font-size: 14px;
+		list-style: none;
+		margin: 0 5px;
+		a {
+			float: left;
+			padding: 1px;
+			padding-top: 4px;
+			text-align: center;
+			text-decoration: none;
+			color: $bg-color-light;
+			border: 2px solid $bg-color-light;
+			border-radius: 100%;
+			width: 20px;
+			height: 16px;
+	 		&:hover,
+	 		&:focus,
+	 		&:active {
+				color: $base-color;
+				border: 2px solid $base-color;
+			}
+		}
+	}
 }

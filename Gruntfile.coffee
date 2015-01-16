@@ -91,7 +91,7 @@ module.exports = (grunt) ->
     open:
       dev:
         path: 'http://localhost:1337/'
-        app: 'Google Chrome'
+        # app: 'Google Chrome'
 
     notify_hooks:
       enabled: true

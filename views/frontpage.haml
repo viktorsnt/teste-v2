@@ -1,6 +1,125 @@
 !!! 5
 %html.no-js
-  = Haml::Engine.new(File.read(File.expand_path File.dirname(__FILE__) + '/shared/head.haml')).render
-  %body
-    %h1 Test
-    = Haml::Engine.new(File.read(File.expand_path File.dirname(__FILE__) + '/shared/javascript.haml')).render
+	= Haml::Engine.new(File.read(File.expand_path File.dirname(__FILE__) + '/shared/head.haml')).render
+	%body
+		
+		.wrapper
+
+			%header
+				%nav
+					%ul.menu
+						%li
+							%a{href:"#"} What is Cosmos?
+						%li
+							%a{href:"#"} Leaving Earth
+						%li.logo
+							%img{src:"assets/images/logo.png"}
+						%li
+							%a{href:"#"} Sea of Tranquility
+						%li
+							%a{href:"#"} Rings of Uranus
+
+				.tagline
+					%h1
+						If you wish to make an apple pie from scratch, you must first invent the universe.
+						%small Carl Sagan
+
+			%section
+				.slider
+					.slide-content.active
+						%img{src:"assets/images/01.jpg"}
+						.slide-text
+							%span Vastness is bearable only through love, quasar rich in heavy atoms rich in mystery venture?
+					.slide-content
+						%img{src:"assets/images/02.jpg"}
+						.slide-text
+							%span Vastness is bearable only through love, quasar rich in heavy atoms rich in mystery venture?
+					.slide-content
+						%img{src:"assets/images/03.jpg"}
+						.slide-text
+							%span Vastness is bearable only through love, quasar rich in heavy atoms rich in mystery venture?
+
+			%section
+				.col
+					%h2 Tesseract laws of physics extraplanetary rings of Uranus
+					%p
+						Concept of the number one, rings of Uranus, tesseract dispassionate extraterrestrial observer cosmic fugue science cosmic fugue, culture not a sunrise but a galaxyrise the only home we've ever known dispassionate extraterrestrial 
+						%a{href: "#"}observer
+						prime number rich in mystery billions upon billions.
+
+					%img.icon{src:"assets/images/icon_1.png"}
+					%img.icon{src:"assets/images/icon_2.png"}
+					%img.icon{src:"assets/images/icon_3.png"}
+					
+					%ul.list
+						%li Dispassionate extraterrestrial observer rich in heavy atoms;
+						%li Love paroxysm of global death;
+						%li Courage of our questions;
+						%li A billion trillion rings of Uranus, light years ship of the life;
+						%li The only home we've ever known;
+
+					%a.button{href: "#"} I want more! >
+
+
+				.col
+					%h2 Light years corpus callosum colonies courage of our questions
+					%p
+						Cosmos, circumnavigated quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+					%form{:action => "/"}
+						%fieldset
+							%input#name.form-text{:type => "text", placeholder: "*Name"}
+						%fieldset
+							%input#email.form-text{:type => "email", placeholder: "*E-mail"}
+						%fieldset
+							%textarea#message.form-text{:type => "text", placeholder: "Message", rows: "4"}
+						%fieldset.form-actions
+							%input{:type => "submit", :value => "Send! >", placeholder: "Name"}
+
+		%footer
+			.wrapper
+				.col.col-md
+					%img{src:"assets/images/logo_overlay.png"}
+					%h3
+						%a{href:"#"} What is Cosmos?
+					%h3
+						%a{href:"#"} Leaving Earth
+					%h3
+						%a{href:"#"} Sea of Tranquility
+					%h3
+						%a{href:"#"} Rings of Uranus
+					
+
+				.col.col-md
+					%h3 Where?
+					%p
+						7627 Round Trace, Deep Run
+						%br
+						Michigan, US
+						%br
+						(248) 403 1706
+						%br
+						48907 6228
+
+
+				.col.col-md
+					%h3 Social
+					%nav.social
+						%ul
+							%li
+								%a.fa.fa-facebook{href: "#", target: "_blank"} 
+							%li
+								%a.fa.fa-google{href: "#", target: "_blank"} 
+							%li
+								%a.fa.fa-instagram{href: "#", target: "_blank"} 
+							%li
+								%a.fa.fa-pinterest{href: "#", target: "_blank"} 
+							%li
+								%a.fa.fa-twitter{href: "#", target: "_blank"} 
+							%li
+								%a.fa.fa-tumblr{href: "#", target: "_blank"}
+
+				.copyright
+					%p.pull-right Cosmos 2013. All rights reserved.
+
+		= Haml::Engine.new(File.read(File.expand_path File.dirname(__FILE__) + '/shared/javascript.haml')).render
